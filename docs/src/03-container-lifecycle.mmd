@@ -1,0 +1,11 @@
+flowchart LR
+    created([created]) --> running[running]
+    running -->|stop| stopped[stopped]
+    stopped -->|start| running
+    running -->|pause| paused[paused]
+    paused -->|unpause| running
+    stopped -->|rm| removed([removed])
+
+    class created,removed client
+    class running app
+    class stopped,paused edge

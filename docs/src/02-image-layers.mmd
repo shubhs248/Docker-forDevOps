@@ -1,0 +1,8 @@
+flowchart TB
+    base[FROM base image] --> dep[RUN install deps]
+    dep --> code[COPY app code]
+    code --> cmd[CMD start app]
+
+    class base data
+    class dep,code app
+    class cmd edge

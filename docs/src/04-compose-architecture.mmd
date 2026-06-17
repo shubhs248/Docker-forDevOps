@@ -1,0 +1,11 @@
+flowchart TB
+    user([User]) --> web[web service]
+    subgraph compose[docker compose]
+      web --> db[(db service)]
+      web --> cache[(cache service)]
+    end
+    db --- vol[(named volume)]
+
+    class user client
+    class web app
+    class db,cache,vol data

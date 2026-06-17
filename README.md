@@ -12,6 +12,22 @@
 
 Copy-pasting a `Dockerfile` from Stack Overflow works until it doesn't — the image is 1.2 GB, the build is slow, and it runs as root. This lab teaches the real skills: writing small, fast, safe images and composing services together, using one tiny web app as the running example.
 
+## 🗺️ Visual overview
+
+A few pictures before the practice. Full set (light + dark, ready for slides/LinkedIn) is in the [diagram gallery](docs/README.md).
+
+**Dockerfile → image → containers** — build once into an image; run it as many containers; push to share.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="docs/01-image-vs-container-dark.png"><img alt="Dockerfile to image to containers" src="docs/01-image-vs-container.png"></picture>
+
+**Image layers**, **container lifecycle**, and **Compose architecture**.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="docs/02-image-layers-dark.png"><img alt="Docker image layers" src="docs/02-image-layers.png"></picture>
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="docs/03-container-lifecycle-dark.png"><img alt="Container lifecycle" src="docs/03-container-lifecycle.png"></picture>
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="docs/04-compose-architecture-dark.png"><img alt="Docker Compose architecture" src="docs/04-compose-architecture.png"></picture>
+
 ## 🗂️ What's inside
 
 ```

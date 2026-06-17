@@ -1,0 +1,9 @@
+flowchart LR
+    df[Dockerfile] -->|docker build| img[(Image<br/>read-only template)]
+    img -->|docker run| c1[Container 1]
+    img -->|docker run| c2[Container 2]
+    img -->|docker push| reg[(Registry)]
+
+    class df client
+    class img,reg data
+    class c1,c2 app
