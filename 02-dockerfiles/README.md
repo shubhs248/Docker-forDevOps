@@ -1,5 +1,13 @@
 # Part 2 — Dockerfiles
 
+*Dockerfile → image → containers (build once, run many, push to share):*
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../docs/01-image-vs-container-dark.png"><img alt="Dockerfile to image to containers" src="../docs/01-image-vs-container.png"></picture>
+
+*How image layers stack — order them so caching works for you:*
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../docs/02-image-layers-dark.png"><img alt="Docker image layers" src="../docs/02-image-layers.png"></picture>
+
 ## 🎯 Goal
 Write images that are **small, fast to build, and safe** — and learn to spot the bad habits that make images huge and slow.
 

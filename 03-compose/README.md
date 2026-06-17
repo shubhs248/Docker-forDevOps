@@ -1,5 +1,9 @@
 # Part 3 — Docker Compose
 
+*A typical Compose app — multiple services wired together:*
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../docs/04-compose-architecture-dark.png"><img alt="Docker Compose architecture" src="../docs/04-compose-architecture.png"></picture>
+
 ## 🎯 Goal
 Run more than one container together. You will build up from a single service to a full
 stack with a database, a cache, healthchecks, and restart policies.

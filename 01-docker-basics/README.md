@@ -1,5 +1,9 @@
 # Part 1 — Docker Basics (Warm-up)
 
+*A container's lifecycle — created → running → stopped → removed:*
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../docs/03-container-lifecycle-dark.png"><img alt="Container lifecycle" src="../docs/03-container-lifecycle.png"></picture>
+
 ## 🎯 Goal
 Refresh the everyday Docker commands so the Dockerfile and Compose parts feel easy.
 
