@@ -1,0 +1,29 @@
+# Solution - Exercise 2.3 The fixed Dockerfile
+# Build from the repo root:  docker build -f 02-dockerfiles/solutions/Dockerfile.exercise-3-fixed -t lab-app:3 .
+
+# Pinned, small base image (was: FROM python)
+FROM python:3.12-slim
+
+WORKDIR /app
+
+# OS packages in ONE layer, no recommends, and clean the apt cache afterwards
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy requirements first (cache!) and install from the pinned file (was: pip install flask/gunicorn by hand)
+COPY app/requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Then copy the code with COPY (was: ADD . /app)
+COPY app/ .
+
+# Run as a non-root user (was: root)
+RUN useradd --create-home appuser
+USER appuser
+
+ENV APP_ENV=production
+EXPOSE 5000
+
+# Exec form (was: shell form "CMD python app/app.py")
+CMD ["python", "app.py"]

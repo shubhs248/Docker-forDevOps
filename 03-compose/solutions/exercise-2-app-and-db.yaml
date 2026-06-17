@@ -1,0 +1,24 @@
+# Solution - Exercise 3.2 App + Database
+
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      APP_ENV: production
+      DATABASE_URL: postgresql://app:secret@db:5432/appdb
+    depends_on:
+      - db
+
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: app
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: appdb
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+volumes:
+  db-data:
